@@ -3,18 +3,21 @@
 Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
+	this->num = 0;
 }
 
 Fixed::Fixed(const Fixed& fixed)
 {
-	void (fixed.NUM_FRACTIONAL_BITS);
 	std::cout << "Copy constructor called" << std::endl;
+	this->setRawBits(fixed.num);
 }
 
 Fixed& Fixed::operator=(const Fixed& f)
 {
-	this->num = f.num;
 	std::cout << "Copy assignment operator called" << std::endl;
+	if (this == &f)
+		return *this;
+	this->num = f.getRawBits();
 	return *this;
 }
 
@@ -25,6 +28,7 @@ Fixed::~Fixed()
 
 int		Fixed::getRawBits(void) const
 {
+	std::cout << "getRawBits member function called" << std::endl;
 	return this->num;
 }
 
