@@ -12,13 +12,14 @@
 class Fixed
 {
 	private:
-		// int	num;
+		int	num;
 		static const int NUM_FRACTIONAL_BITS = 8;
 
 	public:
 		Fixed();
 		~Fixed();
 		Fixed(const Fixed& fixed);
+		Fixed& operator=(const Fixed& f);
 
 };
 
