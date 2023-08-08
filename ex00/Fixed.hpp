@@ -18,6 +18,7 @@ class Fixed
 	public:
 		Fixed();
 		~Fixed();
+		Fixed(const Fixed& fixed);
 
 };
 
