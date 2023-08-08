@@ -12,8 +12,12 @@
 class Fixed
 {
 	private:
+		// int	num;
+		static const int NUM_FRACTIONAL_BITS = 8;
 
 	public:
+		Fixed();
+		~Fixed();
 
 };
 
