@@ -17,8 +17,8 @@ class Fixed
 
 	public:
 		Fixed();
-		Fixed(int iNum);
-		Fixed(double dNumb);
+		Fixed(const int iNum);
+		Fixed(const float fNum);
 		~Fixed();
 		Fixed(const Fixed& fixed);
 		Fixed&	operator=(const Fixed& f);
