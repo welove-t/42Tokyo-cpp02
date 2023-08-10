@@ -71,7 +71,7 @@ bool Fixed::operator==(const Fixed& f)
 
 bool Fixed::operator!=(const Fixed& f)
 {
-	if (this->num == f.getRawBits())
+	if (this->num != f.getRawBits())
 		return true;
 	return false;
 }
@@ -98,6 +98,32 @@ Fixed& Fixed::operator/(const Fixed& f)
 {
 	this->num /= f.getRawBits();
 	return *this;
+}
+
+Fixed& Fixed::operator++(void)
+{
+	this->num++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	++*this;
+	return temp;
+}
+
+Fixed& Fixed::operator--(void)
+{
+	this->num--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	--*this;
+	return temp;
 }
 
 Fixed::~Fixed()
