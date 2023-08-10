@@ -34,6 +34,48 @@ Fixed& Fixed::operator=(const Fixed& f)
 	return *this;
 }
 
+bool Fixed::operator>(const Fixed& f)
+{
+	if (this->num > f.getRawBits())
+		return true;
+	return false;
+}
+
+bool Fixed::operator<(const Fixed& f)
+{
+	if (this->num < f.getRawBits())
+		return true;
+	return false;
+}
+
+bool Fixed::operator>=(const Fixed& f)
+{
+	if (this->num >= f.getRawBits())
+		return true;
+	return false;
+}
+
+bool Fixed::operator<=(const Fixed& f)
+{
+	if (this->num <= f.getRawBits())
+		return true;
+	return false;
+}
+
+bool Fixed::operator==(const Fixed& f)
+{
+	if (this->num == f.getRawBits())
+		return true;
+	return false;
+}
+
+bool Fixed::operator!=(const Fixed& f)
+{
+	if (this->num == f.getRawBits())
+		return true;
+	return false;
+}
+
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;

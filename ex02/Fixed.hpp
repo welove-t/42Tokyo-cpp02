@@ -23,6 +23,12 @@ class Fixed
 		~Fixed();
 		Fixed(const Fixed& fixed);
 		Fixed&	operator=(const Fixed& f);
+		bool	operator>(const Fixed& f);
+		bool	operator<(const Fixed& f);
+		bool	operator>=(const Fixed& f);
+		bool	operator<=(const Fixed& f);
+		bool	operator==(const Fixed& f);
+		bool	operator!=(const Fixed& f);
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 		float	toFloat(void) const;
