@@ -91,6 +91,7 @@ Fixed& Fixed::operator-(const Fixed& f)
 Fixed& Fixed::operator*(const Fixed& f)
 {
 	this->num *= f.getRawBits();
+	printf("num:%d\n", this->num);
 	return *this;
 }
 
@@ -151,6 +152,27 @@ int		Fixed::toInt(void) const
 {
 	return this->num / (1 << this->NUM_FRACTIONAL_BITS);
 }
+
+
+Fixed&	Fixed::max(Fixed& f1, Fixed& f2)
+{
+	return (&f1 > &f2) ? f1 : f2;
+}
+
+const Fixed&	Fixed::max(const Fixed& f1, const Fixed& f2)
+{
+	return (&f1 > &f2) ? f1 : f2;
+}
+
+// static const Fixed&	min(const Fixed& f1, const Fixed& f2)
+// {
+// 	return (&f1 < &f2) ? f1 : f2;
+// }
+
+// static const Fixed&	max(const Fixed& f1, const Fixed& f2)
+// {
+// 	return (&f1 > &f2) ? f1 : f2;
+// }
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& fixed)
 {
