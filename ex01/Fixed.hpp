@@ -2,6 +2,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
 #define RED		"\e[0;31m" // Red
 #define GREEN	"\e[0;32m" // Green
