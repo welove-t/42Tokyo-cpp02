@@ -76,6 +76,30 @@ bool Fixed::operator!=(const Fixed& f)
 	return false;
 }
 
+Fixed& Fixed::operator+(const Fixed& f)
+{
+	this->num += f.getRawBits();
+	return *this;
+}
+
+Fixed& Fixed::operator-(const Fixed& f)
+{
+	this->num -= f.getRawBits();
+	return *this;
+}
+
+Fixed& Fixed::operator*(const Fixed& f)
+{
+	this->num *= f.getRawBits();
+	return *this;
+}
+
+Fixed& Fixed::operator/(const Fixed& f)
+{
+	this->num /= f.getRawBits();
+	return *this;
+}
+
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
